@@ -5,7 +5,6 @@ import "./card-list.styles.css";
 
 class CardList extends Component {
   render() {
-    console.log("gasoline yeeah yeahh");
     return (
       <div className="card-list">
         {this.props.filteredMonsters.map((monster) => (
