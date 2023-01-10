@@ -7,10 +7,12 @@ class Search extends Component {
     const { handleChange } = this.props;
     return (
       <input
+        role="search"
         className="search-bar"
         type="search"
         onChange={handleChange}
         placeholder="Search monsters..."
+        // value=""
       />
     );
   }

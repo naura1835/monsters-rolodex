@@ -9,13 +9,11 @@ class App extends React.Component {
     this.state = { monsters: [], searchField: "" };
   }
   componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((res) => res.json())
-      .then((data) =>
-        this.setState(() => {
-          return { monsters: data };
-        })
-      );
+    getMonsters(fetch).then((data) => {
+      this.setState(() => {
+        return { monsters: data }; //remember to run this and see if its working properly
+      });
+    });
   }
 
   handleChange = (event) =>
@@ -35,5 +33,12 @@ class App extends React.Component {
     );
   }
 }
+
+export const getMonsters = (fetch) =>
+  fetch("https://jsonplaceholder.typicode.com/users")
+    .then((res) => res.json())
+    .then((data) => {
+      return data;
+    });
 
 export default App;
